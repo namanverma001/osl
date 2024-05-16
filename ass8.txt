@@ -86,3 +86,16 @@ AWK Statements
  awk 'BEGIN{for(i=1; i<=10; i++) print "The square of", i, "is", i*i;}'
  awk 'BEGIN{x=1; while(1) {print "Example"; if ( x==5 ) break; x++; }}'
 
+egrep
+-c: Used to counts and prints the number of lines that matched the pattern and not the lines.
+-v: It prints the lines that does not match with the pattern.
+-i: Ignore the case of the pattern while matching.
+-l: Prints only the names of the files that matched. It does not mention the matching line numbers or any other information.
+-L: Prints only the names of the files that did not have the pattern. Opposite of -l flag.
+-e: Allows to use a ‘-‘ sign in the beginning of the pattern. If not mentioned the shell tries to execute the pattern as an option and returns an error.
+-w: Prints only those lines that contain the whole words. Word-constituent characters are letters, digits and underscore. The matching substring must be separated by non-word constituent characters.
+-x: Prints only those lines that matches an entire line of the file.
+-m NUMBER: Continue to search for matches till the count reaches NUMBER mentioned as argument.
+-o: Prints only the matched parts of the line and not the entire line for each match.
+-n: Prints each matched line along with the respective line numbers. For multiple files, prints the file names along with line numbers.
+-r: Recursively search for the pattern in all the files of the directory. The last argument is the directory to check. ‘.’ (dot) represents the current directory.
