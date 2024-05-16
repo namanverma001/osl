@@ -1,0 +1,88 @@
+pwd - current directory
+
+ls content directory
+ls -a -hidden files
+ls -l -file details
+ls -i - wth innodes
+
+
+----Cat-----
+
+cat filename
+cat file1 file2
+cat -n filename
+cat > new1
+cat [sourceFile] > [destFile]
+cat -s filename 
+cat file1 >> file2
+cat "file1" "file2" "file3" > "mergedFile"
+
+
+
+-Redirection-----
+1. Overwrite Redirection:
+● “>” standard output 
+● “<” standard input 
+
+
+2. Append Redirection:  
+
+● “>>” standard output 
+● “<<” standard input
+
+3.Merge Redirection: 
+● “p >& q” Merges output from stream p with stream q 
+● “p <& q” Merges input from stream p with stream q 
+
+
+
+---Pipes :-----
+
+echo "hello there" 
+hello there 
+echo "hello there" | sed "s/hello/hi/" 
+
+
+
+------Unix Utilities :-------
+tr : 
+$ cat greekfile | tr [a-z] [A-Z] 
+$ echo "Welcome To GeeksforGeeks" | tr [:space:] "\t" 
+tr "{}" "()" <greekfile >newfile.txt 
+$ echo "Welcome To GeeksforGeeks" | tr -d W
+echo "my ID is 73535" | tr -d [:digit:]  
+
+
+sed
+Replacing or substituting string---sed 's/unix/linux/' geekfile.txt
+Replacing the nth occurrence of a pattern in a line-----sed 's/unix/linux/2' geekfile.txt
+Deleting lines from a particular file----
+particular line---sed '5d' file.txt
+last line ---- sed '$d' file.txt
+range line sed '3,6d' file.txt
+patter deleting --sed '/pattern/d' file.txt
+
+
+grep
+ Case insensitive search
+ grep -i "UNix" geekfile.txt
+
+ Displaying the count of number of matches
+ grep -c "unix" geekfile.txt 
+
+Display the file names that matches the pattern 
+grep -l "unix" f1.txt f2.txt f3.xt 
+
+
+AWK Statements 
+
+ if-else
+ awk -F ',' '{if($2==$3){print $1","$2","$3} else {print "No Duplicates"}}' answers.txt 
+
+ while
+ awk '{i=0; while(i<=NF) { print i ":"$i; i++;}}' employees.txt
+
+ for
+ awk 'BEGIN{for(i=1; i<=10; i++) print "The square of", i, "is", i*i;}'
+ awk 'BEGIN{x=1; while(1) {print "Example"; if ( x==5 ) break; x++; }}'
+
